@@ -19,7 +19,6 @@
     </properties>
 
     <modules>
-        <module>timefractalweb-web-core</module>
     </modules>
 
     <build>

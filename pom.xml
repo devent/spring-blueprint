@@ -17,13 +17,15 @@
     <properties>
         <project.custom.globalpom-groovy.version>4.5.0</project.custom.globalpom-groovy.version>
         <project.custom.pax.exam.version>4.12.0</project.custom.pax.exam.version>
+        <project.custom.spring.version>5.1.2.RELEASE</project.custom.spring.version>
+        <project.custom.spring-boot.version>2.1.0.RELEASE</project.custom.spring-boot.version>
     </properties>
 
     <modules>
         <module>timefractalweb-calc</module>
         <module>timefractalweb-calc-itest</module>
+        <module>timefractalweb-web-core</module>
         <module>timefractalweb-bundle</module>
-        <module>timefractalweb-web-boot</module>
     </modules>
 
     <dependencyManagement>
