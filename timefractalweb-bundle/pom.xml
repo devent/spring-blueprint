@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>com.anrisoftware.timefractalweb</groupId>
+        <artifactId>timefractalweb-root</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    
+    <artifactId>timefractalweb-bundle</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.custom.bundle.namespace>com.anrisoftware.timefractalweb</project.custom.bundle.namespace>
+        <project.custom.bundle.namespace.internal>com.anrisoftware.timefractalweb.internal</project.custom.bundle.namespace.internal>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <executions>
+                    <!-- Configure extra execution of 'manifest' in process-classes 
+                        phase to make sure SCR metadata is generated before unit test runs -->
+                    <execution>
+                        <id>scr-metadata</id>
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                        <configuration>
+                            <supportIncrementalBuild>true</supportIncrementalBuild>
+                        </configuration>
+                    </execution>
+                </executions>
+                <configuration>
+                    <Export-Package>!${project.custom.bundle.namespace.internal}.*,${project.custom.bundle.namespace}.*;version="${project.version}"</Export-Package>
+                    <Private-Package>${project.custom.bundle.namespace.internal}.*</Private-Package>
+                    <instructions>
+                        <_include>osgi.bnd</_include>
+                        <_dsannotations>*</_dsannotations>
+                        <_metatypeannotations>*</_metatypeannotations>
+                    </instructions>
+                    <!-- Export SCR metadata to classpath to have them available 
+                        in unit tests -->
+                    <exportScr>true</exportScr>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
