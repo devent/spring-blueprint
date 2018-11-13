@@ -18,6 +18,10 @@
         <project.custom.bundle.namespace.internal>com.anrisoftware.timefractalweb.internal</project.custom.bundle.namespace.internal>
     </properties>
 
+    <modules>
+        <module>timefractalweb-web-core</module>
+    </modules>
+
     <build>
         <plugins>
             <plugin>

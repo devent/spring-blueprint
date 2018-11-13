@@ -23,6 +23,7 @@
         <module>timefractalweb-calc</module>
         <module>timefractalweb-calc-itest</module>
         <module>timefractalweb-bundle</module>
+        <module>timefractalweb-web-boot</module>
     </modules>
 
     <dependencyManagement>
