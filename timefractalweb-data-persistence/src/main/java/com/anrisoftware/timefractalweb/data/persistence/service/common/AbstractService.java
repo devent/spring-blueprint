@@ -1,4 +1,4 @@
-package com.anrisoftware.timefractalweb.data.common;
+package com.anrisoftware.timefractalweb.data.persistence.service.common;
 
 /*-
  * #%L
@@ -28,6 +28,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.anrisoftware.timefractalweb.data.persistence.common.Operations;
 import com.google.common.collect.Lists;
 
 @Transactional
@@ -36,7 +37,7 @@ public abstract class AbstractService<T extends Serializable> implements Operati
     @Override
     @Transactional(readOnly = true)
     public T findOne(final long id) {
-        return getDao().findOne(id);
+        return getDao().findById(id).get();
     }
 
     @Override
@@ -47,7 +48,7 @@ public abstract class AbstractService<T extends Serializable> implements Operati
 
     @Override
     public Page<T> findPaginated(final int page, final int size) {
-        return getDao().findAll(new PageRequest(page, size));
+        return getDao().findAll(PageRequest.of(page, size));
     }
 
     @Override
@@ -67,7 +68,7 @@ public abstract class AbstractService<T extends Serializable> implements Operati
 
     @Override
     public void deleteById(final long entityId) {
-        getDao().delete(entityId);
+        getDao().deleteById(entityId);
     }
 
     protected abstract PagingAndSortingRepository<T, Long> getDao();

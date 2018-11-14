@@ -20,9 +20,7 @@
 
     <modules>
         <module>../timefractalweb-calc</module>
-        <module>../timefractalweb-data-common</module>
         <module>../timefractalweb-data-persistence</module>
-        <module>../timefractalweb-data-user</module>
     </modules>
 
     <dependencies>

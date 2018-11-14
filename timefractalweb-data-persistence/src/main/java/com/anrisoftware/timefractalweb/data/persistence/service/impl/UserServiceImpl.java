@@ -1,4 +1,4 @@
-package com.anrisoftware.timefractalweb.data.user.internal;
+package com.anrisoftware.timefractalweb.data.persistence.service.impl;
 
 /*-
  * #%L
@@ -29,20 +29,20 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.anrisoftware.timefractalweb.data.common.AbstractService;
-import com.anrisoftware.timefractalweb.data.user.User;
-import com.anrisoftware.timefractalweb.data.user.UserDao;
-import com.anrisoftware.timefractalweb.data.user.UserService;
+import com.anrisoftware.timefractalweb.data.persistence.dao.UserDao;
+import com.anrisoftware.timefractalweb.data.persistence.model.User;
+import com.anrisoftware.timefractalweb.data.persistence.service.UserService;
+import com.anrisoftware.timefractalweb.data.persistence.service.common.AbstractService;
 import com.google.common.collect.Lists;
 
 @Service
 @Transactional
-public class FooService extends AbstractService<User> implements UserService {
+public class UserServiceImpl extends AbstractService<User> implements UserService {
 
     @Autowired
     private UserDao dao;
 
-    public FooService() {
+    public UserServiceImpl() {
         super();
     }
 
@@ -52,8 +52,8 @@ public class FooService extends AbstractService<User> implements UserService {
     }
 
     @Override
-    public User retrieveByName(final String name) {
-        return dao.retrieveByName(name);
+    public User retrieveByUserName(final String name) {
+        return dao.retrieveByUserName(name);
     }
 
     @Override

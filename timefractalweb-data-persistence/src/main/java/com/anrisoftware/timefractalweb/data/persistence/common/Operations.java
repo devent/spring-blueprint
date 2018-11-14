@@ -1,8 +1,8 @@
-package com.anrisoftware.timefractalweb.data.user;
+package com.anrisoftware.timefractalweb.data.persistence.common;
 
 /*-
  * #%L
- * timefractalweb-data-user
+ * timefractalweb-data-common
  * %%
  * Copyright (C) 2011 - 2018 Advanced Natural Research Institute
  * %%
@@ -20,15 +20,25 @@ package com.anrisoftware.timefractalweb.data.user;
  * #L%
  */
 
+import java.io.Serializable;
+import java.util.List;
+
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
-import com.anrisoftware.timefractalweb.data.common.Operations;
+public interface Operations<T extends Serializable> {
 
-public interface UserService extends Operations<User> {
+    T findOne(final long id);
 
-    User retrieveByName(String name);
-    
-    Page<User> findPaginated(Pageable pageable);
+    List<T> findAll();
+
+    Page<T> findPaginated(int page, int size);
+
+    T create(final T entity);
+
+    T update(final T entity);
+
+    void delete(final T entity);
+
+    void deleteById(final long entityId);
 
 }

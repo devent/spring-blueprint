@@ -1,4 +1,4 @@
-package com.anrisoftware.timefractalweb.data.user.internal;
+package com.anrisoftware.timefractalweb.data.persistence.model;
 
 /*-
  * #%L
@@ -24,29 +24,41 @@ import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
 import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
 import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.anrisoftware.timefractalweb.data.user.User;
-
 @SuppressWarnings("serial")
 @Entity
-public class UserImpl implements User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
+    private String userName;
+
+    @Column(nullable = false)
     private String firstName;
 
     private String lastName;
 
+    @Column(nullable = false)
     private String email;
 
-    public UserImpl() {
-        super();
+    public User() {
+    }
+
+    public User(String userName, String firstName, String lastName, String email) {
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
     }
 
     public Long getId() {
@@ -56,8 +68,15 @@ public class UserImpl implements User {
     public void setId(final Long id) {
         this.id = id;
     }
+    
+    public String getUserName() {
+        return userName;
+    }
+    
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-    @Override
     public String getFirstName() {
         return firstName;
     }
@@ -66,7 +85,6 @@ public class UserImpl implements User {
         this.firstName = firstName;
     }
 
-    @Override
     public String getLastName() {
         return lastName;
     }
@@ -75,7 +93,6 @@ public class UserImpl implements User {
         this.lastName = lastName;
     }
 
-    @Override
     public String getEmail() {
         return email;
     }

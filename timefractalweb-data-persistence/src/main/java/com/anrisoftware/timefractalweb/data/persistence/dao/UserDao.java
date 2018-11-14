@@ -1,4 +1,4 @@
-package com.anrisoftware.timefractalweb.data.user;
+package com.anrisoftware.timefractalweb.data.persistence.dao;
 
 /*-
  * #%L
@@ -20,14 +20,14 @@ package com.anrisoftware.timefractalweb.data.user;
  * #L%
  */
 
-import java.io.Serializable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
-public interface User extends Serializable {
+import com.anrisoftware.timefractalweb.data.persistence.model.User;
 
-    String getFirstName();
+public interface UserDao extends JpaRepository<User, Long> {
 
-    String getLastName();
-
-    String getEmail();
-
+    @Query("SELECT u FROM #{#entityName} u WHERE LOWER(u.userName) = LOWER(:name)")
+    User retrieveByUserName(@Param("name") String name);
 }

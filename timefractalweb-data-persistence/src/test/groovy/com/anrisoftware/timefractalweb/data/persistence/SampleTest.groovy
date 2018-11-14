@@ -17,25 +17,34 @@
  * limitations under the License.
  * #L%
  */
-package com.anrisoftware.timefractalweb.data.user.internal
+package com.anrisoftware.timefractalweb.data.persistence
+
+import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic
+import static org.junit.jupiter.api.Assertions.*
 
 import org.junit.jupiter.api.AfterAll
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.dao.DataIntegrityViolationException
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.test.context.support.AnnotationConfigContextLoader
 import org.springframework.transaction.annotation.Transactional
 
-import com.anrisoftware.timefractalweb.data.persistence.internal.PersistenceConfig
+import com.anrisoftware.timefractalweb.data.persistence.config.PersistenceConfig
+import com.anrisoftware.timefractalweb.data.persistence.model.User
+import com.anrisoftware.timefractalweb.data.persistence.service.UserService
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = [ PersistenceConfig.class ], loader = AnnotationConfigContextLoader.class)
 @Transactional
 class SampleTest {
 
+    @Autowired
+    private UserService service;
+    
     @BeforeAll
     static void setUp() {
         // Do something before all tests
@@ -47,13 +56,18 @@ class SampleTest {
     }
     
     @Test
-    void testAdd() {
-        int a = 1, b = 1;
+    void "create user"() {
+        def userName = randomAlphabetic(6)
+        def firstName = randomAlphabetic(6)
+        def lastName = randomAlphabetic(6)
+        def email = randomAlphabetic(6)
+        service.create(new User(userName, firstName, lastName, email));
+    }
 
-        Assertions.assertEquals(2, a + b);
-    }
-    
     @Test
-    void testDatabaseQuery() {
+    public final void whenInvalidEntityIsCreated_thenDataException() {
+       assertThrows DataIntegrityViolationException, { service.create(new User()) }
     }
+
+
 }
