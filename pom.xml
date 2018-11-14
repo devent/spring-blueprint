@@ -22,10 +22,9 @@
     </properties>
 
     <modules>
-        <module>timefractalweb-calc</module>
         <module>timefractalweb-calc-itest</module>
-        <module>timefractalweb-web-core</module>
         <module>timefractalweb-bundle</module>
+        <module>timefractalweb-web-core</module>
     </modules>
 
     <dependencyManagement>

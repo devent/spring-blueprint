@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.anrisoftware.timefractalweb</groupId>
+        <artifactId>timefractalweb-bundle</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../timefractalweb-bundle</relativePath>
+    </parent>
+
+    <artifactId>timefractalweb-data-persistence</artifactId>
+    <packaging>bundle</packaging>
+
+    <properties>
+        <project.custom.bundle.namespace>com.anrisoftware.timefractalweb.data.persistence</project.custom.bundle.namespace>
+        <project.custom.bundle.namespace.internal>com.anrisoftware.timefractalweb.data.persistence.internal</project.custom.bundle.namespace.internal>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-commons</artifactId>
+            <version>2.1.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

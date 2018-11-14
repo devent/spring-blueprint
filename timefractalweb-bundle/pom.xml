@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    
+
     <modelVersion>4.0.0</modelVersion>
-    
+
     <parent>
         <groupId>com.anrisoftware.timefractalweb</groupId>
         <artifactId>timefractalweb-root</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    
+
     <artifactId>timefractalweb-bundle</artifactId>
     <packaging>pom</packaging>
 
@@ -19,7 +19,37 @@
     </properties>
 
     <modules>
+        <module>../timefractalweb-calc</module>
+        <module>../timefractalweb-data-common</module>
+        <module>../timefractalweb-data-persistence</module>
+        <module>../timefractalweb-data-user</module>
     </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.cmpn</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-io</artifactId>
+            <version>3.0.0.M01</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-core</artifactId>
+            <version>3.0.0.M01</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-extender</artifactId>
+            <version>3.0.0.M01</version>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
