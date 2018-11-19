@@ -1,15 +1,17 @@
+package com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.common;
+
 /*-
  * #%L
- * Properties Utilities :: Context Properties
+ * timefractalweb-data-common
  * %%
- * Copyright (C) 2012 - 2018 Advanced Natural Research Institute
+ * Copyright (C) 2011 - 2018 Advanced Natural Research Institute
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,17 +20,25 @@
  * #L%
  */
 
-package com.anrisoftware.timefractalweb.spring.userservice.persistence.service;
+import java.io.Serializable;
+import java.util.List;
 
-import org.osgi.service.component.annotations.Component;
+import org.springframework.data.domain.Page;
 
-/**
- * Provides {@link UserService}.
- *
- * @author Erwin Müller, erwin.mueller@deventm.de
- * @since 2.1
- */
-@Component
-public class UserServiceService {
+public interface Operations<T extends Serializable> {
+
+    T findOne(final long id);
+
+    List<T> findAll();
+
+    Page<T> findPaginated(int page, int size);
+
+    T create(final T entity);
+
+    T update(final T entity);
+
+    void delete(final T entity);
+
+    void deleteById(final long entityId);
 
 }

@@ -1,4 +1,4 @@
-package com.anrisoftware.timefractalweb.spring.userservice.persistence.service;
+package com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.dao;
 
 /*-
  * #%L
@@ -20,16 +20,14 @@ package com.anrisoftware.timefractalweb.spring.userservice.persistence.service;
  * #L%
  */
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
-import com.anrisoftware.timefractalweb.spring.userservice.persistence.common.Operations;
-import com.anrisoftware.timefractalweb.spring.userservice.persistence.model.User;
+import com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.model.User;
 
-public interface UserService extends Operations<User> {
+public interface UserDao extends JpaRepository<User, Long> {
 
-    User retrieveByUserName(String name);
-    
-    Page<User> findPaginated(Pageable pageable);
-
+    @Query("SELECT u FROM #{#entityName} u WHERE LOWER(u.userName) = LOWER(:name)")
+    User retrieveByUserName(@Param("name") String name);
 }

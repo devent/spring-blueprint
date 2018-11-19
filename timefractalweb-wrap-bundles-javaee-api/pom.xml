@@ -11,24 +11,20 @@
         <relativePath>../timefractalweb-wrap-bundles-parent</relativePath>
     </parent>
 
-    <artifactId>timefractalweb-wrap-bundles-spring-data</artifactId>
+    <artifactId>timefractalweb-wrap-bundles-javaee-api</artifactId>
     <packaging>bundle</packaging>
     <name>${project.artifactId}</name>
 
     <properties>
-        <project.custom.bundle.unpack.version>${project.custom.spring-boot.version}</project.custom.bundle.unpack.version>
+        <project.custom.bundle.unpack.version>8.0</project.custom.bundle.unpack.version>
         <project.custom.bundle.export.package />
         <project.custom.bundle.import.packages>*;resolution:=optional</project.custom.bundle.import.packages>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-commons</artifactId>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
         </dependency>
     </dependencies>
 

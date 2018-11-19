@@ -1,4 +1,4 @@
-package com.anrisoftware.timefractalweb.spring.userservice.persistence.service.common;
+package com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.service.common;
 
 /*-
  * #%L
@@ -28,7 +28,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.anrisoftware.timefractalweb.spring.userservice.persistence.common.Operations;
+import com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.common.Operations;
 import com.google.common.collect.Lists;
 
 @Transactional

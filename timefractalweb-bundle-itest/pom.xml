@@ -113,6 +113,20 @@
             <type>bundle</type>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.anrisoftware.timefractalweb</groupId>
+            <artifactId>timefractalweb-wrap-bundles-javaee-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>bundle</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.anrisoftware.timefractalweb</groupId>
+            <artifactId>timefractalweb-wrap-bundles-thymeleaf</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>bundle</type>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

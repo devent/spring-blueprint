@@ -1,4 +1,4 @@
-package com.anrisoftware.timefractalweb.spring.userservice.persistence.config;
+package com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.config;
 
 /*-
  * #%L

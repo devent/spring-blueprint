@@ -1,4 +1,4 @@
-package com.anrisoftware.timefractalweb.spring.userservice.persistence.service.impl;
+package com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.service.impl;
 
 /*-
  * #%L
@@ -29,10 +29,10 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.anrisoftware.timefractalweb.spring.userservice.persistence.dao.UserDao;
-import com.anrisoftware.timefractalweb.spring.userservice.persistence.model.User;
-import com.anrisoftware.timefractalweb.spring.userservice.persistence.service.UserService;
-import com.anrisoftware.timefractalweb.spring.userservice.persistence.service.common.AbstractService;
+import com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.dao.UserDao;
+import com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.model.User;
+import com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.service.UserService;
+import com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.service.common.AbstractService;
 import com.google.common.collect.Lists;
 
 @Service

@@ -29,6 +29,8 @@
     <modules>
         <module>../timefractalweb-wrap-bundles-spring-core</module>
         <module>../timefractalweb-wrap-bundles-spring-data</module>
+        <module>../timefractalweb-wrap-bundles-javaee-api</module>
+        <module>../timefractalweb-wrap-bundles-thymeleaf</module>
     </modules>
 
     <build>

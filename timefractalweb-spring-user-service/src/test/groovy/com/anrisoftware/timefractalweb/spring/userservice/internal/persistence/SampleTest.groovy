@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package com.anrisoftware.timefractalweb.spring.userservice.persistence
+package com.anrisoftware.timefractalweb.spring.userservice.internal.persistence
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic
 import static org.junit.jupiter.api.Assertions.*
@@ -33,9 +33,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.test.context.support.AnnotationConfigContextLoader
 import org.springframework.transaction.annotation.Transactional
 
-import com.anrisoftware.timefractalweb.spring.userservice.persistence.config.PersistenceConfig
-import com.anrisoftware.timefractalweb.spring.userservice.persistence.model.User
-import com.anrisoftware.timefractalweb.spring.userservice.persistence.service.UserService
+import com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.config.PersistenceConfig
+import com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.model.User
+import com.anrisoftware.timefractalweb.spring.userservice.internal.persistence.service.UserService
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = [ PersistenceConfig.class ], loader = AnnotationConfigContextLoader.class)

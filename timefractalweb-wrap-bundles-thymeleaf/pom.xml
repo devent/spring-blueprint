@@ -6,29 +6,31 @@
 
     <parent>
         <groupId>com.anrisoftware.timefractalweb</groupId>
-        <artifactId>timefractalweb-wrap-bundles</artifactId>
+        <artifactId>timefractalweb-wrap-bundles-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../timefractalweb-wrap-bundles-parent</relativePath>
     </parent>
 
-    <artifactId>timefractalweb-wrap-bundles-spring-data</artifactId>
+    <artifactId>timefractalweb-wrap-bundles-thymeleaf</artifactId>
     <packaging>bundle</packaging>
     <name>${project.artifactId}</name>
 
     <properties>
-        <project.custom.bundle.unpack.version>${project.custom.spring-boot.version}</project.custom.bundle.unpack.version>
+        <project.custom.bundle.unpack.version>3.0.11.RELEASE</project.custom.bundle.unpack.version>
         <project.custom.bundle.export.package />
         <project.custom.bundle.import.packages>*;resolution:=optional</project.custom.bundle.import.packages>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring5</artifactId>
+            <version>3.0.11.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-commons</artifactId>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>3.0.11.RELEASE</version>
         </dependency>
     </dependencies>
 

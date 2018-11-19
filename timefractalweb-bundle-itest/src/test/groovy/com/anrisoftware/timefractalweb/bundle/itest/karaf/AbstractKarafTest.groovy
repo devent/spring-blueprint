@@ -51,9 +51,11 @@ class AbstractKarafTest extends KarafTestSupport {
             mavenBundle().groupId("org.awaitility").artifactId("awaitility").versionAsInProject(),
             mavenBundle().groupId("org.apache.servicemix.bundles").artifactId("org.apache.servicemix.bundles.hamcrest").versionAsInProject(),
             mavenBundle().groupId("org.apache.karaf.itests").artifactId("common").versionAsInProject(),
-            mavenBundle().groupId("com.anrisoftware.timefractalweb").artifactId("timefractalweb-data-persistence").versionAsInProject(),
+            mavenBundle().groupId("com.anrisoftware.timefractalweb").artifactId("timefractalweb-spring-user-service").versionAsInProject(),
             mavenBundle().groupId("com.anrisoftware.timefractalweb").artifactId("timefractalweb-wrap-bundles-spring-core").versionAsInProject(),
             mavenBundle().groupId("com.anrisoftware.timefractalweb").artifactId("timefractalweb-wrap-bundles-spring-data").versionAsInProject(),
+            mavenBundle().groupId("com.anrisoftware.timefractalweb").artifactId("timefractalweb-wrap-bundles-javaee-api").versionAsInProject(),
+            mavenBundle().groupId("com.anrisoftware.timefractalweb").artifactId("timefractalweb-wrap-bundles-thymeleaf").versionAsInProject(),
             mavenBundle().groupId("com.google.guava").artifactId("guava").versionAsInProject(),
             mavenBundle().groupId("org.hibernate.javax.persistence").artifactId("hibernate-jpa-2.1-api").versionAsInProject(),
             mavenBundle().groupId("org.apache.commons").artifactId("commons-lang3").versionAsInProject(),
@@ -65,5 +67,5 @@ class AbstractKarafTest extends KarafTestSupport {
             editConfigurationFilePut("etc/org.ops4j.pax.url.mvn.cfg", "org.ops4j.pax.url.mvn.localRepository", localRepository)
         ]
     }
-
+  
 }
