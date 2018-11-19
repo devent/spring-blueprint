@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.anrisoftware.timefractalweb</groupId>
+        <artifactId>timefractalweb-root</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>timefractalweb-wrap-bundles</artifactId>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+
+    <properties>
+        <project.custom.bundle.export.package />
+        <project.custom.bundle.unpack.version />
+        <project.custom.bundle.export.packages>${project.custom.bundle.export.package}*;version=${project.custom.bundle.unpack.version}</project.custom.bundle.export.packages>
+        <project.custom.bundle.import.packages>*</project.custom.bundle.import.packages>
+        <project.custom.bundle.private.packages>!*</project.custom.bundle.private.packages>
+        <project.custom.bundle.symbolic.name>${project.groupId}.${project.artifactId}</project.custom.bundle.symbolic.name>
+        <project.custom.bundle.embed-dep>*;scope=compile;type=!pom;inline=true</project.custom.bundle.embed-dep>
+        <project.custom.bundle.unpack-bundle>false</project.custom.bundle.unpack-bundle>
+        <project.custom.bundle.include.resources />
+    </properties>
+
+    <modules>
+        <module>../timefractalweb-spring-core-bundles</module>
+        <module>../timefractalweb-spring-data-bundles</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <unpackBundle>${project.custom.bundle.unpack-bundle}</unpackBundle>
+                    <instructions>
+                        <Bundle-Name>${project.artifactId}</Bundle-Name>
+                        <Bundle-SymbolicName>${project.custom.bundle.symbolic.name}</Bundle-SymbolicName>
+                        <Bundle-Description>${project.name}</Bundle-Description>
+                        <Import-Package>${project.custom.bundle.import.packages}</Import-Package>
+                        <Private-Package>${project.custom.bundle.private.packages}</Private-Package>
+                        <Include-Resource>${project.custom.bundle.include.resources}</Include-Resource>
+                        <Embed-Dependency>${project.custom.bundle.embed-dep}</Embed-Dependency>
+                        <_exportcontents>${project.custom.bundle.export.packages}</_exportcontents>
+                    </instructions>
+                </configuration>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

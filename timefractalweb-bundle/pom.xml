@@ -32,21 +32,6 @@
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>gemini-blueprint-io</artifactId>
-            <version>3.0.0.M01</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>gemini-blueprint-core</artifactId>
-            <version>3.0.0.M01</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>gemini-blueprint-extender</artifactId>
-            <version>3.0.0.M01</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -56,7 +41,7 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
                 <executions>
-                    <!-- Configure extra execution of 'manifest' in process-classes 
+                    <!-- Configure extra execution of 'manifest' in process-classes
                         phase to make sure SCR metadata is generated before unit test runs -->
                     <execution>
                         <id>scr-metadata</id>
@@ -71,12 +56,13 @@
                 <configuration>
                     <Export-Package>!${project.custom.bundle.namespace.internal}.*,${project.custom.bundle.namespace}.*;version="${project.version}"</Export-Package>
                     <Private-Package>${project.custom.bundle.namespace.internal}.*</Private-Package>
+                    <Spring-Context>*</Spring-Context>
                     <instructions>
                         <_include>osgi.bnd</_include>
                         <_dsannotations>*</_dsannotations>
                         <_metatypeannotations>*</_metatypeannotations>
                     </instructions>
-                    <!-- Export SCR metadata to classpath to have them available 
+                    <!-- Export SCR metadata to classpath to have them available
                         in unit tests -->
                     <exportScr>true</exportScr>
                 </configuration>

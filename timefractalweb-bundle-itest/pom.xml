@@ -10,7 +10,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>timefractalweb-calc-itest</artifactId>
+    <artifactId>timefractalweb-bundle-itest</artifactId>
 
     <dependencies>
         <!-- Provide the KarafTestSupport -->
@@ -20,7 +20,7 @@
             <version>4.2.1</version>
             <scope>test</scope>
         </dependency>
-        <!-- Define the Apache Karaf version to download and use for the 
+        <!-- Define the Apache Karaf version to download and use for the
             test -->
         <dependency>
             <groupId>org.apache.karaf</groupId>
@@ -85,49 +85,76 @@
             <version>3.6</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Own modules -->
+        <dependency>
+            <groupId>com.anrisoftware.timefractalweb</groupId>
+            <artifactId>timefractalweb-data-persistence</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>bundle</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.anrisoftware.timefractalweb</groupId>
+            <artifactId>timefractalweb-spring-core-bundles</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>bundle</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.anrisoftware.timefractalweb</groupId>
+            <artifactId>timefractalweb-spring-data-bundles</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>bundle</type>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <version>3.5.1</version>
-        <extensions>true</extensions>
-        <executions>
-          <execution>
-            <id>cleanVersions</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>cleanVersions</goal>
-            </goals>
-            <configuration>
-              <versions>
-                <karaf.osgi.version>4.2.1</karaf.osgi.version>
-              </versions>
-              <obrRepository>NONE</obrRepository>
-              <instructions>
-                <nsh_interface>org.apache.aries.blueprint.NamespaceHandler</nsh_interface>
-                <nsh_namespace>osgi.service.blueprint.namespace</nsh_namespace>
-                <_removeheaders>Private-Package,Include-Resource,Embed-Dependency,Created-By,Bnd-LastModified,Built-By,Tool</_removeheaders>
-                <_versionpolicy>[$(version;==;$(@)),$(version;+;$(@)))</_versionpolicy>
-                <Bundle-DocURL>http://karaf.apache.org/</Bundle-DocURL>
-              </instructions>
-            </configuration>
-          </execution>
-        </executions>
-        <inherited>true</inherited>
-        <configuration>
-          <obrRepository>NONE</obrRepository>
-          <instructions>
-            <nsh_interface>org.apache.aries.blueprint.NamespaceHandler</nsh_interface>
-            <nsh_namespace>osgi.service.blueprint.namespace</nsh_namespace>
-            <_removeheaders>Private-Package,Include-Resource,Embed-Dependency,Created-By,Bnd-LastModified,Built-By,Tool</_removeheaders>
-            <_versionpolicy>[$(version;==;$(@)),$(version;+;$(@)))</_versionpolicy>
-            <Bundle-DocURL>http://karaf.apache.org/</Bundle-DocURL>
-          </instructions>
-        </configuration>
-      </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>cleanVersions</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>cleanVersions</goal>
+                        </goals>
+                        <configuration>
+                            <versions>
+                                <karaf.osgi.version>4.2.1</karaf.osgi.version>
+                            </versions>
+                            <obrRepository>NONE</obrRepository>
+                            <instructions>
+                                <nsh_interface>org.apache.aries.blueprint.NamespaceHandler</nsh_interface>
+                                <nsh_namespace>osgi.service.blueprint.namespace</nsh_namespace>
+                                <_removeheaders>Private-Package,Include-Resource,Embed-Dependency,Created-By,Bnd-LastModified,Built-By,Tool</_removeheaders>
+                                <_versionpolicy>[$(version;==;$(@)),$(version;+;$(@)))</_versionpolicy>
+                                <Bundle-DocURL>http://karaf.apache.org/</Bundle-DocURL>
+                            </instructions>
+                        </configuration>
+                    </execution>
+                </executions>
+                <inherited>true</inherited>
+                <configuration>
+                    <obrRepository>NONE</obrRepository>
+                    <instructions>
+                        <nsh_interface>org.apache.aries.blueprint.NamespaceHandler</nsh_interface>
+                        <nsh_namespace>osgi.service.blueprint.namespace</nsh_namespace>
+                        <_removeheaders>Private-Package,Include-Resource,Embed-Dependency,Created-By,Bnd-LastModified,Built-By,Tool</_removeheaders>
+                        <_versionpolicy>[$(version;==;$(@)),$(version;+;$(@)))</_versionpolicy>
+                        <Bundle-DocURL>http://karaf.apache.org/</Bundle-DocURL>
+                    </instructions>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.servicemix.tooling</groupId>
                 <artifactId>depends-maven-plugin</artifactId>
