@@ -94,7 +94,7 @@
         <!-- Own modules -->
         <dependency>
             <groupId>com.anrisoftware.timefractalweb</groupId>
-            <artifactId>timefractalweb-data-persistence</artifactId>
+            <artifactId>timefractalweb-spring-user-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <type>bundle</type>
             <scope>test</scope>

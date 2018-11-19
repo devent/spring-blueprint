@@ -22,8 +22,8 @@
     </properties>
 
     <modules>
-        <module>timefractalweb-bundle</module>
         <module>timefractalweb-bundle-itest</module>
+        <module>timefractalweb-bundle-parent</module>
         <module>timefractalweb-web-core</module>
         <module>timefractalweb-wrap-bundles-parent</module>
     </modules>
