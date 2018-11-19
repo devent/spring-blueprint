@@ -101,14 +101,14 @@
         </dependency>
         <dependency>
             <groupId>com.anrisoftware.timefractalweb</groupId>
-            <artifactId>timefractalweb-spring-core-bundles</artifactId>
+            <artifactId>timefractalweb-wrap-bundles-spring-core</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <type>bundle</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.anrisoftware.timefractalweb</groupId>
-            <artifactId>timefractalweb-spring-data-bundles</artifactId>
+            <artifactId>timefractalweb-wrap-bundles-spring-data</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <type>bundle</type>
             <scope>test</scope>

@@ -25,7 +25,7 @@
         <module>timefractalweb-bundle</module>
         <module>timefractalweb-bundle-itest</module>
         <module>timefractalweb-web-core</module>
-        <module>timefractalweb-wrap-bundles</module>
+        <module>timefractalweb-wrap-bundles-parent</module>
     </modules>
 
     <dependencyManagement>

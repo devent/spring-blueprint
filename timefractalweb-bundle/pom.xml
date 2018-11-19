@@ -16,6 +16,7 @@
     <properties>
         <project.custom.bundle.namespace>com.anrisoftware.timefractalweb</project.custom.bundle.namespace>
         <project.custom.bundle.namespace.internal>com.anrisoftware.timefractalweb.internal</project.custom.bundle.namespace.internal>
+        <project.custom.bundle.activator />
     </properties>
 
     <modules>
@@ -41,7 +42,7 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
                 <executions>
-                    <!-- Configure extra execution of 'manifest' in process-classes
+                    <!-- Configure extra execution of 'manifest' in process-classes 
                         phase to make sure SCR metadata is generated before unit test runs -->
                     <execution>
                         <id>scr-metadata</id>
@@ -56,13 +57,13 @@
                 <configuration>
                     <Export-Package>!${project.custom.bundle.namespace.internal}.*,${project.custom.bundle.namespace}.*;version="${project.version}"</Export-Package>
                     <Private-Package>${project.custom.bundle.namespace.internal}.*</Private-Package>
-                    <Spring-Context>*</Spring-Context>
                     <instructions>
                         <_include>osgi.bnd</_include>
                         <_dsannotations>*</_dsannotations>
                         <_metatypeannotations>*</_metatypeannotations>
+                        <Bundle-Activator>${project.custom.bundle.activator}</Bundle-Activator>
                     </instructions>
-                    <!-- Export SCR metadata to classpath to have them available
+                    <!-- Export SCR metadata to classpath to have them available 
                         in unit tests -->
                     <exportScr>true</exportScr>
                 </configuration>

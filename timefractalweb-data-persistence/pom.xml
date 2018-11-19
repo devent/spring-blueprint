@@ -17,6 +17,7 @@
     <properties>
         <project.custom.bundle.namespace>com.anrisoftware.timefractalweb.data.persistence</project.custom.bundle.namespace>
         <project.custom.bundle.namespace.internal>com.anrisoftware.timefractalweb.data.persistence.internal</project.custom.bundle.namespace.internal>
+        <project.custom.bundle.activator>com.anrisoftware.timefractalweb.data.persistence.internal.bundle.Activator</project.custom.bundle.activator>
     </properties>
 
     <dependencies>

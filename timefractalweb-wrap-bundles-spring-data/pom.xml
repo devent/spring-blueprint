@@ -11,7 +11,7 @@
         <relativePath>../timefractalweb-wrap-bundles</relativePath>
     </parent>
 
-    <artifactId>timefractalweb-spring-data-bundles</artifactId>
+    <artifactId>timefractalweb-wrap-bundles-spring-data</artifactId>
     <packaging>bundle</packaging>
     <name>${project.artifactId}</name>
 

@@ -10,7 +10,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>timefractalweb-wrap-bundles</artifactId>
+    <artifactId>timefractalweb-wrap-bundles-parent</artifactId>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
 
@@ -27,8 +27,8 @@
     </properties>
 
     <modules>
-        <module>../timefractalweb-spring-core-bundles</module>
-        <module>../timefractalweb-spring-data-bundles</module>
+        <module>../timefractalweb-wrap-bundles-spring-core</module>
+        <module>../timefractalweb-wrap-bundles-spring-data</module>
     </modules>
 
     <build>
