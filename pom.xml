@@ -24,6 +24,7 @@
     <modules>
         <module>timefractalweb-bundle-itest</module>
         <module>timefractalweb-bundle-parent</module>
+        <module>timefractalweb-spring-user-service</module>
         <module>timefractalweb-web-core</module>
         <module>timefractalweb-wrap-bundles-parent</module>
     </modules>

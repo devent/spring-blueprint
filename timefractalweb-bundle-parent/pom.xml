@@ -21,7 +21,6 @@
 
     <modules>
         <module>../timefractalweb-calc</module>
-        <module>../timefractalweb-spring-user-service</module>
     </modules>
 
     <dependencies>
