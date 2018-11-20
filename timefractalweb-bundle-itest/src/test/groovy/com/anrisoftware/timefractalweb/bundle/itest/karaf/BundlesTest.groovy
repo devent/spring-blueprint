@@ -40,7 +40,10 @@ class BundlesTest extends AbstractKarafTest {
 
         // installing a feature and verifying that it's correctly installed
         installAndAssertFeature("scr");
-
+        installAndAssertFeature("war");
+        
+        installBundle("mvn:com.anrisoftware.timefractalweb/timefractalweb-spring-user-service/0.0.1-SNAPSHOT/war", true)
+        
         // testing a command execution
         String bundles = executeCommand("bundle:list -t 0");
         System.out.println(bundles);
