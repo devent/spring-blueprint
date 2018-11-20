@@ -40,13 +40,14 @@ import org.thymeleaf.templatemode.TemplateMode;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = { "com.anrisoftware.timefractalweb.web.internal.controller" })
+@ComponentScan(basePackages = { "com.anrisoftware.timefractalweb.spring.userservice.internal.controller" })
 public class WebConfig implements WebMvcConfigurer, ApplicationContextAware {
 
     private ApplicationContext applicationContext;
 
     public WebConfig() {
         super();
+        System.out.println("WebConfig.WebConfig()");
     }
 
     public void setApplicationContext(final ApplicationContext applicationContext) throws BeansException {

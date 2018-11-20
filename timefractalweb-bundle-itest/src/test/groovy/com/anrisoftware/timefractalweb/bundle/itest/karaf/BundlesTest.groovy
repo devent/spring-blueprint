@@ -57,5 +57,11 @@ class BundlesTest extends AbstractKarafTest {
         FeaturesService featuresService = getOsgiService(FeaturesService.class);
         Feature scr = featuresService.getFeature("scr");
         Assert.assertEquals("scr", scr.getName());
+        
+        String httpList = executeCommand("http:list");
+        System.out.print(httpList);
+        
+        String webList = executeCommand("web:list");
+        System.out.print(webList);
     }
 }

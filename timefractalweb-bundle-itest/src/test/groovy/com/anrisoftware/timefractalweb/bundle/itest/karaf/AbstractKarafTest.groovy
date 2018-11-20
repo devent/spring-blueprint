@@ -65,7 +65,7 @@ class AbstractKarafTest extends KarafTestSupport {
             editConfigurationFilePut("etc/org.apache.karaf.management.cfg", "rmiRegistryPort", customRmiRegistryPort),
             editConfigurationFilePut("etc/org.apache.karaf.management.cfg", "rmiServerPort", customRmiServerPort),
             editConfigurationFilePut("etc/org.apache.karaf.shell.cfg", "sshPort", customSshPort),
-            editConfigurationFilePut("etc/org.ops4j.pax.url.mvn.cfg", "org.ops4j.pax.url.mvn.localRepository", localRepository)
+            editConfigurationFilePut("etc/org.ops4j.pax.url.mvn.cfg", "org.ops4j.pax.url.mvn.localRepository", localRepository),
         ]
     }
   

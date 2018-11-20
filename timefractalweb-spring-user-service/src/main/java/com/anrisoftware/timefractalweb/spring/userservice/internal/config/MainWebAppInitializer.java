@@ -31,9 +31,10 @@ import org.springframework.web.context.support.GenericWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
 public class MainWebAppInitializer implements WebApplicationInitializer {
+    
     @Override
     public void onStartup(final ServletContext sc) throws ServletException {
-
+        System.out.println("MainWebAppInitializer.onStartup()");
         AnnotationConfigWebApplicationContext root = new AnnotationConfigWebApplicationContext();
 
         root.scan("com.anrisoftware.timefractalweb.web");
