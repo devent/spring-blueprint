@@ -99,34 +99,6 @@
             <type>bundle</type>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.anrisoftware.timefractalweb</groupId>
-            <artifactId>timefractalweb-wrap-bundles-spring-core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <type>bundle</type>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.anrisoftware.timefractalweb</groupId>
-            <artifactId>timefractalweb-wrap-bundles-spring-data</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <type>bundle</type>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.anrisoftware.timefractalweb</groupId>
-            <artifactId>timefractalweb-wrap-bundles-thymeleaf</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <type>bundle</type>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.anrisoftware.timefractalweb</groupId>
-            <artifactId>timefractalweb-wrap-bundles-checkerframework</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <type>bundle</type>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
