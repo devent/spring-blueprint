@@ -10,7 +10,9 @@
         <version>2.1.0.RELEASE</version>
     </parent>
 
-    <artifactId>timefractalweb-web-boot</artifactId>
+    <artifactId>timefractalweb-springboot-web-service</artifactId>
+    <name>timefractalweb :: spring-boot :: web-service</name>
+    <description>Provides the web user interface as a spring-boot application.</description>
 
     <dependencies>
         <dependency>
@@ -23,7 +25,7 @@
         </dependency>
         <dependency>
             <groupId>com.anrisoftware.timefractalweb</groupId>
-            <artifactId>timefractalweb-web-core</artifactId>
+            <artifactId>timefractalweb-spring-web-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
