@@ -41,9 +41,9 @@ class BundlesTest extends AbstractKarafTest {
         // installing a feature and verifying that it's correctly installed
         installAndAssertFeature("scr");
         installAndAssertFeature("war");
-        
+
         installBundle("mvn:com.anrisoftware.timefractalweb/timefractalweb-spring-user-service/0.0.1-SNAPSHOT/war", true)
-        
+
         // testing a command execution
         String bundles = executeCommand("bundle:list -t 0");
         System.out.println(bundles);
@@ -57,11 +57,19 @@ class BundlesTest extends AbstractKarafTest {
         FeaturesService featuresService = getOsgiService(FeaturesService.class);
         Feature scr = featuresService.getFeature("scr");
         Assert.assertEquals("scr", scr.getName());
-        
-        String httpList = executeCommand("http:list");
-        System.out.print(httpList);
-        
-        String webList = executeCommand("web:list");
-        System.out.print(webList);
+
+        String httpList = ""
+        while (!(httpList =~ /(spring-user-service).*(Deployed)/)) {
+            Thread.sleep 1000
+            httpList = executeCommand("http:list");
+            System.out.print(httpList);
+        }
+        String webList = ""
+        while (!(webList =~ /(Deployed).*(\/timefractalweb-spring-user-service)/)) {
+            Thread.sleep 1000
+            webList = executeCommand("web:list");
+            System.out.print(webList);
+        }
+        Thread.sleep 60*60*1000
     }
 }

@@ -20,7 +20,7 @@
             <version>4.2.1</version>
             <scope>test</scope>
         </dependency>
-        <!-- Define the Apache Karaf version to download and use for the
+        <!-- Define the Apache Karaf version to download and use for the 
             test -->
         <dependency>
             <groupId>org.apache.karaf</groupId>
@@ -109,13 +109,6 @@
         <dependency>
             <groupId>com.anrisoftware.timefractalweb</groupId>
             <artifactId>timefractalweb-wrap-bundles-spring-data</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <type>bundle</type>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.anrisoftware.timefractalweb</groupId>
-            <artifactId>timefractalweb-wrap-bundles-javaee-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <type>bundle</type>
             <scope>test</scope>

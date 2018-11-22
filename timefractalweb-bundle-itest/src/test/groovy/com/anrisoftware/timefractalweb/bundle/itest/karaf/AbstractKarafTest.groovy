@@ -53,7 +53,6 @@ class AbstractKarafTest extends KarafTestSupport {
             mavenBundle().groupId("org.apache.karaf.itests").artifactId("common").versionAsInProject(),
             mavenBundle().groupId("com.anrisoftware.timefractalweb").artifactId("timefractalweb-wrap-bundles-spring-core").versionAsInProject(),
             mavenBundle().groupId("com.anrisoftware.timefractalweb").artifactId("timefractalweb-wrap-bundles-spring-data").versionAsInProject(),
-            mavenBundle().groupId("com.anrisoftware.timefractalweb").artifactId("timefractalweb-wrap-bundles-javaee-api").versionAsInProject(),
             mavenBundle().groupId("com.anrisoftware.timefractalweb").artifactId("timefractalweb-wrap-bundles-thymeleaf").versionAsInProject(),
             mavenBundle().groupId("com.anrisoftware.timefractalweb").artifactId("timefractalweb-wrap-bundles-checkerframework").versionAsInProject(),
             mavenBundle().groupId("com.google.guava").artifactId("guava").versionAsInProject(),
