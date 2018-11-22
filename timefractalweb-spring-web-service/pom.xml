@@ -10,15 +10,15 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>timefractalweb-spring-user-service</artifactId>
+    <artifactId>timefractalweb-spring-web-service</artifactId>
     <packaging>war</packaging>
-    <name>timefractalweb :: spring :: user-service</name>
-    <description>Provides a REST API to access the authenticate and authorize users and provides user information.</description>
+    <name>timefractalweb :: spring :: web-service</name>
+    <description>Provides the web user interface.</description>
 
     <properties>
-        <project.custom.bundle.namespace>com.anrisoftware.timefractalweb.spring.userservice</project.custom.bundle.namespace>
-        <project.custom.bundle.namespace.internal>com.anrisoftware.timefractalweb.spring.userservice.internal</project.custom.bundle.namespace.internal>
-        <project.custom.bundle.activator>com.anrisoftware.timefractalweb.spring.userservice.internal.bundle.Activator</project.custom.bundle.activator>
+        <project.custom.bundle.namespace>com.anrisoftware.timefractalweb.spring.webservice</project.custom.bundle.namespace>
+        <project.custom.bundle.namespace.internal>com.anrisoftware.timefractalweb.spring.webservice.internal</project.custom.bundle.namespace.internal>
+        <project.custom.bundle.activator>com.anrisoftware.timefractalweb.spring.webservice.internal.bundle.Activator</project.custom.bundle.activator>
     </properties>
 
     <dependencies>
